@@ -4,5 +4,7 @@
 <head>
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
-    <h1>Hello world</h1>
+<header>
+    <h1>Hello World</h1>
+</header>
 @endsection
