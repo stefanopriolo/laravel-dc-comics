@@ -228,20 +228,21 @@ class ComicSeeder extends Seeder
      */
     public function run(): void
     {
-        foreach ($this->datiGrezzi as $comics) {
-            $comicsModel = new \App\Models\Comic();
+        $comicsData = require base_path('resources/data/comics.php');
+        foreach ($comicsData as $comic) {
+            $newComic = new Comic();
 
-            $comicsModel->title = $comics["title"];
-            $comicsModel->description = $comics["description"];
-            $comicsModel->thumb = $comics["thumb"];
-            $comicsModel->price = $comics["price"];
-            $comicsModel->series = $comics["series"];
-            $comicsModel->sale_date = $comics["sale_date"];
-            $comicsModel->type = $comics["type"];
-            $comicsModel->artists = json_encode($comics["artists"]);
-            $comicsModel->writers = json_encode($comics["writers"]);
+            $newComic->title = $comic["title"];
+            $newComic->description = $comic["description"];
+            $newComic->thumb = $comic["thumb"];
+            $newComic->price = str_replace("$", "", $comic["price"]);
+            $newComic->series = $comic["series"];
+            $newComic->sale_date = $comic["sale_date"];
+            $newComic->type = $comic["type"];
+            $newComic->artists = json_encode($comic["artists"]);
+            $newComic->writers = json_encode($comic["writers"]);
 
-            $comicsModel->save();
+            $newComic->save();
         }
     }
 }

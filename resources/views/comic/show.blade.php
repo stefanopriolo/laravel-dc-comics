@@ -28,9 +28,6 @@
                 </p>
               </div>
             </div>
-            <div class="col-3">
-              <img src="/img/adv.jpg" class="w-100" alt="adv">
-            </div>
           </div>
         </div>
       </div>

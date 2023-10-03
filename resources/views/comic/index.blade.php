@@ -15,8 +15,15 @@
       </div>
       @endforeach
     </div>
-    <div class="badge text-bg-primary position-absolute">Load more</div>
+    <a class="badge text-bg-primary position-absolute" href="{{ route("comic.create") }}">add comic</a>
   </div>
 </div>
 @include("partials.blue-stripe")
 @endsection
+
+<style>
+  .card-img-top {
+    object-fit: cover;
+    height: 500px; /* Imposta l'altezza desiderata per tutte le immagini */
+  }
+</style>
