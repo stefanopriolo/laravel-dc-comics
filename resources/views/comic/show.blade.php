@@ -22,6 +22,8 @@
                 <span>U.S. Price ${{$comic->price}}</span>
                 <span>AVAILABLE</span>
               </div>
+              <a href="{{ route('comic.create')}}">Aggiungi un gioco</a>
+              <a href="{{ route('comic.edit', ['comic' => $comic]) }}">Modifica</a>
               <div>
                 <p>
                   {{$comic->description}}
